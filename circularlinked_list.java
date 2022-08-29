@@ -37,6 +37,37 @@ public void insert_at_first(int element){
         head=new_node;
     }
 }
+public void insert_after(int position,int element){
+    if(head==null){
+        System.out.println("list is empty create list first...");
+        return;
+    }
+    node new_node= new node(element);
+    if(head.data==position && last!=null){
+        new_node.next=last;
+        head.next=new_node;
+    }
+    else if(last.data==position){
+        new_node.next=last.next;
+        last.next=new_node;
+        last=last.next;
+    }
+    else{
+        node itr = head;
+        while(itr.data!=position && itr.next!=last.next){
+            itr=itr.next;
+        }
+        if(itr.next==last.next){
+            System.out.println("item is not found ");
+            return;
+        }
+        else if(itr.data==position){
+            new_node.next=itr.next;
+            itr.next=new_node;
+        }
+
+    }
+}
 public void delete(node start,int element){
         if(start==null){
             System.out.println("list is empty");
@@ -91,27 +122,48 @@ public static void printlist(circularlinked_list l){
         // l.insert_at_first(element);
         // }
         l.insert_at_first(1);
-        l.insert_at_end(6);
-        l.insert_at_end(7);
-        l.insert_at_end(8);
-        l.insert_at_end(9);
-        l.insert_at_end(10);
-        l.insert_at_end(11);
+        System.out.println(l.head.data);
+        System.out.println(l.last.data );
+        // l.insert_at_end(6);
+        // l.insert_at_end(7);
+        // l.insert_at_end(8);
+        // l.insert_at_end(9);
+        // l.insert_at_end(10);
+        // l.insert_at_end(11);
         circularlinked_list.printlist(l);//printing the linked list.....
         System.out.println("\n\n");
-        l.delete(l.head,9);//middle element.........
-        l.delete(l.head,11);//last element..........
-        l.delete(l.head,1);// first element.........
-        l.delete(l.head,45);//element which is not in the list...
-        circularlinked_list.printlist(l);//printing the linked list.....
+        // l.delete(l.head,9);//middle element.........
+        // l.delete(l.head,11);//last element..........
+        // l.delete(l.head,1);// first element.........
+        // l.delete(l.head,45);//element which is not in the list...
+        boolean flag = true;
+        // while(flag){
+        //     System.out.println("\n enter the element to be deleted");
+        //     int element=sc.nextInt();
+        //     l.delete(l.head, element);
+        //     System.out.println("to repeat press 1");
+        //     int check = sc.nextInt();
+        //     if(check!=1){
+        //         flag=false;
+        //     }
+        // }
 
-        System.out.println( "\n"+ l.last.next.data);// checking the circular link by accessing last.next.data
-                                                        //which is equals to head data
-        System.out.println(l.head.data);//l.head.data 
-        if(l.last.next.data==l.head.data){
-            System.out.println("Hurrey..........circular linked list is formed........");
+        while(flag){
+            System.out.println("\n enter the element position and element to be inserted");
+            int position = sc.nextInt();
+            int element=sc.nextInt();
+            l.insert_after(position, element);
+            circularlinked_list.printlist(l);//printing the linked list.....
+            System.out.println("to repeat press 1");
+            int check = sc.nextInt();
+            if(check!=1){
+                flag=false;
+            }
         }
-        sc.close();
 
+        // circularlinked_list.printlist(l);//printing the linked list.....
+
+
+        sc.close();
     }
 }
