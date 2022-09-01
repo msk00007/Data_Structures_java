@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class tese8 {
+public class test8 {
     public static int partition(int[] a, int lb, int ub){
         int pivot = a[lb];
         int i = lb;
