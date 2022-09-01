@@ -1,5 +1,5 @@
 import java.util.*;
-public class inf_to_pos {
+public class lab16 {
 	
 	public static int inp_prec(char ns) {
 		if(ns== '+' || ns == '-'){
