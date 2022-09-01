@@ -5,7 +5,7 @@ public static void insertion(int[] arr,int lb, int ub){
     if(lb>ub){
         return;
     }
-    for(int i = 1;i<ub;i++){
+    for(int i = 1;i<=ub;i++){
         int j = i-1;
         int temp = arr[i];
         while(j>=0 && temp<arr[j]){
