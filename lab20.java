@@ -20,26 +20,17 @@ public class lab20 {
     }
 
     public static int binary_search(String[] a, int lb, int ub, String key){
-        if(lb<ub){
+        if(lb<=ub){
         int mid = (lb+ub)/2; 
         if(a[mid].compareTo(key)==0){
             return mid;
         }
-        if(key.compareTo(a[mid])<0){
-            for(int i=lb;i<mid;i++){
-                if(a[i]==key){
-                    return i;
-                }
-            }
+        else if(key.compareTo(a[mid])<0){     
+      return binary_search(a, lb, mid-1, key);
         }
-        else if(key.compareTo(a[mid])>0){
-            for(int i=mid+1;i<=ub;i++){
-                if(a[i]==key){
-                    return i;
-                }
-            }
+        else {
+      return binary_search(a, mid+1,ub,key);
         }
-        return -1;
     }
     return -1;
 }
