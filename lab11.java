@@ -1,7 +1,7 @@
 import java.util.*;
 public class lab11 {
     public static void B_Sort(int[] l, int lb, int ub) {
-        if(lb<=ub){
+        if(lb<ub){
         for (int i = lb; i < ub; i++) {
             for (int j = 0; j < ub - i; j++) {
                 if (l[j] > l[j + 1]) {
@@ -24,7 +24,7 @@ public class lab11 {
                 Bsearch(m,lb,ub,key);
             }
             else{
-                lb=lb+1;
+                lb=mid+1;
                 Bsearch(m,lb,ub,key);
             }
     
