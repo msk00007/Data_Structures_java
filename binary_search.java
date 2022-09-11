@@ -13,7 +13,7 @@ public class binary_search {
                 Bsearch(m,lb,ub,key);
             }
             else{
-                lb=lb+1;
+                lb=mid+1;
                 Bsearch(m,lb,ub,key);
             }
     
