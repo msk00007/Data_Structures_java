@@ -2,7 +2,7 @@ import java.util.*;
 public class lab22{
     public static void insertion(String[] arr,int lb, int ub){
 
-        if(lb>ub){
+        if(lb>=ub){
             return;
         }
         for(int i = 1;i<=ub;i++){
@@ -16,7 +16,7 @@ public class lab22{
         }
     }
         public static int binary_search(String[] a, int lb, int ub, String key){
-            if(lb<ub){
+            if(lb<=ub){
             int mid = (lb+ub)/2; 
             if(a[mid].equals(key)){
                 return mid;
