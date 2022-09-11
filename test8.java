@@ -25,7 +25,7 @@ public class test8 {
         if(lb<ub){
         int pos;
         pos= partition(arr, lb,ub);
-        quicksort(arr, lb,pos);
+        quicksort(arr, lb,pos-1);
         quicksort(arr,pos+1,ub);
         }
     }
