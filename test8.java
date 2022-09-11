@@ -8,7 +8,7 @@ public class test8 {
         while(i<=ub && a[i]<=pivot){
             i++;
         }
-        while(is a[j]>pivot){
+        while(a[j]>pivot){
             j--;
         }
         if(i<j){
