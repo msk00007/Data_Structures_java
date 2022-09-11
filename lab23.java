@@ -6,7 +6,7 @@ public static int partition(String[] arr, int lb, int ub){
     int i = lb;
     int j = ub;
     while(i<j){
-        while(i<ub && arr[i].compareTo(pivot)<=0){
+        while(i<=ub && arr[i].compareTo(pivot)<=0){
             i++;
         }
         while(arr[j].compareTo(pivot)>0){
