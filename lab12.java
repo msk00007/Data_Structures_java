@@ -2,7 +2,7 @@ import java.util.*;
 public class lab12 {
 public static void insertion(int[] arr,int lb, int ub){
 
-    if(lb>ub){
+    if(lb>=ub){
         return;
     }
     for(int i = 1;i<=ub;i++){
