@@ -1,7 +1,7 @@
 import java.util.*;
 public class lab14 {
    public static void selectionSort(int[] a, int lb, int ub){
-    if(lb>ub){
+    if(lb>=ub){
         return;
     }
     for(int i = lb; i<ub;i++){
