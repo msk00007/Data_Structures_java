@@ -9,7 +9,7 @@ public static int partition(String[] arr, int lb, int ub){
         while(i<ub && arr[i].compareTo(pivot)<=0){
             i++;
         }
-        while(j>lb && arr[j].compareTo(pivot)>0){
+        while(arr[j].compareTo(pivot)>0){
             j--;
         }
         if(i<j){
@@ -23,7 +23,7 @@ public static int partition(String[] arr, int lb, int ub){
     return j;
 }
 public static void Quicksort(String[] arr, int lb, int ub){
-if(lb<=ub){
+if(lb<ub){
     int pos = partition(arr, lb, ub);
     Quicksort(arr, lb, pos-1);
     Quicksort(arr, pos+1, ub);
