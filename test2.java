@@ -20,26 +20,18 @@ public class test2 {
             System.out.print(arr[i]+" ");
         }
     }
-    public static int bsearch(int[] arr,int lb, int ub,int key){
-        if(lb<=ub){
+     public static int bsearch(int[] arr,int lb, int ub,int key){
+        while(lb<=ub){
             int mid = (lb+ub)/2;
             if(arr[mid]==key){
                 return mid;
             }
             else if(key<arr[mid]){
-                for(int i = lb;i<=mid-1;i++){
-                    if(arr[i]==key){
-                        return i;
-                    }
-                }
+            ub = mid-1;
             }
             else if(key>arr[mid]){
-                for(int i = mid+1;i<=ub;i++){
-                    if(arr[i]==key){
-                        return i;
-                    }
-                }
-            }
+           lb = mid+1;
+        }
         }
         return -1;
     }
