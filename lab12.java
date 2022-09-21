@@ -15,28 +15,20 @@ public static void insertion(int[] arr,int lb, int ub){
         arr[j+1]=temp;
     }
 }
-    public static int binary_search(int[] a, int lb, int ub, int key){
-        if(lb<ub){
-        int mid = (lb+ub)/2; 
-        if(a[mid]==key){
-            return mid;
-        }
-        if(key<a[mid]){
-            for(int i=lb;i<mid;i++){
-                if(a[i]==key){
-                    return i;
-                }
+     public static int bsearch(int[] arr,int lb, int ub,int key){
+        while(lb<=ub){
+            int mid = (lb+ub)/2;
+            if(arr[mid]==key){
+                return mid;
             }
-        }
-        else if(key>a[mid]){
-            for(int i=mid+1;i<=ub;i++){
-                if(a[i]==key){
-                    return i;
-                }
+            else if(key<arr[mid]){
+            ub = mid-1;
             }
+            else if(key>arr[mid]){
+           lb = mid+1;
         }
-    }
-    return -1;
+        }
+        return -1;
     }
     
     
