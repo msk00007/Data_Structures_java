@@ -27,10 +27,10 @@ public class test1 {
                 return mid;
             }
             else if(key<arr[mid]){
-            ub = mid-1
+            ub = mid-1;
             }
             else if(key>arr[mid]){
-           lb = mid+1
+           lb = mid+1;
         }
         }
         return -1;
