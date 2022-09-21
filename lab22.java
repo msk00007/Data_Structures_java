@@ -22,18 +22,10 @@ public class lab22{
                 return mid;
             }
             if(key.compareTo(a[mid])<0){
-                for(int i=lb;i<mid;i++){
-                    if(a[i]==key){
-                        return i;
-                    }
-                }
+                ub = mid-1
             }
             else if(key.compareTo(a[mid])>0){
-                for(int i=mid+1;i<=ub;i++){
-                    if(a[i]==key){
-                        return i;
-                    }
-                }
+            lb = mid+1
             }
         }
         return -1;
