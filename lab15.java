@@ -16,25 +16,18 @@ public class lab15 {
             a[min]=minvalue;
         }
        }
-       public static int Bsearch(int[] m,int lb, int ub,int key){
+        public static int bsearch(int[] arr,int lb, int ub,int key){
         while(lb<=ub){
-            int mid= (lb+ub)/2;
-            if(m[mid]==key){
+            int mid = (lb+ub)/2;
+            if(arr[mid]==key){
                 return mid;
             }
-            else if(key<m[mid]){
-              for(int i = lb;i<mid;i++){
-                if(m[i]==key)
-                    return i;
-              }
-            }            
-            else{
-               for(int i = mid+1; i<=ub;i++){
-                if(m[i]==key)
-                return i;
-               }
+            else if(key<arr[mid]){
+            ub = mid-1;
             }
-            return -1;
+            else if(key>arr[mid]){
+           lb = mid+1;
+        }
         }
         return -1;
     }
