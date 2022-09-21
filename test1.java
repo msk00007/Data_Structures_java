@@ -21,25 +21,17 @@ public class test1 {
         }
     }
     public static int bsearch(int[] arr,int lb, int ub,int key){
-        if(lb<=ub){
+        while(lb<=ub){
             int mid = (lb+ub)/2;
             if(arr[mid]==key){
                 return mid;
             }
             else if(key<arr[mid]){
-                for(int i = lb;i<=mid-1;i++){
-                    if(arr[i]==key){
-                        return i;
-                    }
-                }
+            ub = mid-1
             }
             else if(key>arr[mid]){
-                for(int i = mid+1;i<=ub;i++){
-                    if(arr[i]==key){
-                        return i;
-                    }
-                }
-            }
+           lb = mid+1
+        }
         }
         return -1;
     }
