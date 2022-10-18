@@ -3,10 +3,13 @@ public class lab5 {
 
     public static void main(String[] args){
         stack S = new stack();
-        S.push(5);
-        S.push(3);
-        S.push(2);
-        S.push(4);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the range..");
+        int n = sc.nextInt();
+        for (int i = 0; i<n;i++){
+           int element = sc.nextInt();
+            S.push(element);
+        }
        
         S.pop();
     
@@ -79,8 +82,8 @@ public void revprint(node head){
         return;
     }
     revprint(head.next);
-    if(this.head==head){
-        System.err.println(head.info);
+    if(head==this.head){
+        System.out.println(head.info);
     }
     else{
     System.out.print(head.info+"-->");
