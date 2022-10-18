@@ -31,7 +31,7 @@ public class lab4{
     static int top = -1;
     int[] a;
     stack(int num){
-         a = new int[num];
+         this.a = new int[num];
     }
     public boolean isEmpty(){
         if(top == -1){
@@ -50,19 +50,8 @@ public class lab4{
             System.out.println("stack is full");
             return;
         }
-        else{
-            if(isEmpty()){
+        else
                 a[++top]=element;
-                
-            }
-            else{
-                if(!isFull()){
-                    top++;
-                }
-                a[top]=element;
-                
-            }
-        }
     }
     public int pop(){
         if(isEmpty()){
