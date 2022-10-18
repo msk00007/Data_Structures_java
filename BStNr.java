@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class BStNr {
+public class BstNr {
     static class node{
         int data ;
         node left,right;
@@ -55,9 +55,6 @@ public class BStNr {
         return false;
     }
     public static boolean NRsearch(node root,int key){
-        if(root == null){
-            return false;
-        }
         while(root!=null){
             if(root.data == key){
                 return true;
@@ -90,9 +87,6 @@ public class BStNr {
         Root = insert(Root, 2);
         Root = insert(Root, 1);
         Root = insert(Root, 3);
-        node checknode = null;//to check for search when root is null
-        // System.out.println("\nInOrder of the given Bst is ");
-        // InOrder(Root);
     System.out.println("Enter the key for search");
     int key = sc.nextInt();
     // search using recursive function.............
@@ -105,7 +99,7 @@ public class BStNr {
         System.out.println("key is not found");
     }
     // search using non recursive function..here we are checking for when root is null...........
-    boolean res2 = Rsearch(checknode, key);
+    boolean res2 = NRsearch(Root, key);
     System.out.println("search using non recursive function.............");
     if (res2){
     System.out.println("key is found ");
