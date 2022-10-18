@@ -1,22 +1,22 @@
 import java.util.*;
 public class binaryT {
-    static class Node
+ static class Node
     {
-        public int data;
-        public Node ls;
-        public Node rs;
+         int data;
+         Node left;
+         Node right;
     }
-    static Scanner s=new Scanner(System.in);
+    static Scanner sc=new Scanner(System.in);
         public static Node construct(Node r)
         {
-            System.out.println("ENter element");
-            int ele=s.nextInt();
+            System.out.println("Enter element");
+            int ele=sc.nextInt();
             if (ele != -1)
             {
                 r=new Node();
                 r.data=ele;
-                r.ls =construct(r.ls);
-                r.rs =construct(r.rs);
+                r.left =construct(r.left);
+                r.right =construct(r.right);
             }
             else{
                 r=null;
@@ -29,25 +29,25 @@ public class binaryT {
                 return;
             }
             System.out.print(r.data+" ");
-            preorder(r.ls);
-            preorder(r.rs);
+            preorder(r.left);
+            preorder(r.right);
         }
         public static void inorder(Node r)
         {
             if(r==null){
                 return;
             }
-            inorder(r.ls);
+            inorder(r.left);
             System.out.print(r.data+" ");
-            inorder(r.rs);
+            inorder(r.right);
         }
         public static void postorder(Node r)
         {
             if(r==null){
                 return;
             }
-            postorder(r.ls);
-            postorder(r.rs);
+            postorder(r.left);
+            postorder(r.right);
             System.out.print(r.data+" ");
         }
         public static void main(String args[])
