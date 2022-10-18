@@ -18,10 +18,6 @@ public class test3 {
         }
         if(head!=null){
             node new_node = new node(element);
-            if(head.next==null){
-                head.next=new_node;
-                return;
-            }
             node temp=head;
             while(temp.next!=null){
                 temp=temp.next;
