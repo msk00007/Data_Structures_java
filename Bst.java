@@ -48,11 +48,11 @@ public class Bst {
     }
     public static void main(String[] args) {
         node Root = null; 
-        Root = insert(Root, 4);
-        Root = insert(Root, 5);
-        Root = insert(Root, 2);
-        Root = insert(Root, 1);
-        Root = insert(Root, 3);
+        System.out.println("Enter range :);
+        int n = sc.nextInt();
+        for(int i =0;i<n;i++){
+            Root = insert(Root,sc.nextInt());
+    
         System.out.println("\nInOrder of the given Bst is ");
         InOrder(Root);
         System.out.println("\nPreOrder of the given Bst is ");
