@@ -52,7 +52,7 @@ public class Bst {
         int n = sc.nextInt();
         for(int i =0;i<n;i++){
             Root = insert(Root,sc.nextInt());
-    
+        }
         System.out.println("\nInOrder of the given Bst is ");
         InOrder(Root);
         System.out.println("\nPreOrder of the given Bst is ");
