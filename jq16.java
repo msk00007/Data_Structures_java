@@ -1,88 +1,56 @@
-import java.util.ArrayList;
-import java.util.Scanner;
- public class jq16 {
-public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
-    System.out.println("Enter your array size");
-    int size = sc.nextInt();
-    arraylist arr = new arraylist(size);
-    for(int i = 0 ; i < size ; i++){
-        System.out.println("Enter element:");
-        arr.Add(sc.nextInt());
-    }
-    arr.Print_list();
-    System.out.println(arr.isfull());
-    System.out.println("Enter any index between 0 to "+size);
+import java.util.*;
 
-    int res =arr.get(sc.nextInt());
-    System.out.println(res);
-    arr.Add(100);
-    System.out.println("Enter element to remove");
-    arr.remove(sc.nextInt());
-    System.out.println("Afer removing the element : ");arr.Print_list();
-    System.out.println(arr.isEmpty());
-    sc.close();
-    
-}
-
-}
-
-class arraylist{
-    int size;
-    ArrayList<Integer> myarr;
-    arraylist(int size){
-    this.size = size;
-    this.myarr = new ArrayList<Integer>(size);
-    }
-    void Add(int element){
-        if(!isfull()){
-        myarr.add(element);
-        return;
+public class jq16 {
+    public static void main(String[] args) {
+        List<Integer> l = new ArrayList<Integer>();
+        System.out.println("Enter the range of elements : ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.println("Enter elements");
+        for (int i = 0; i < n; i++) {
+            l.add(sc.nextInt());
         }
-        System.out.println("list is full");
-
-    }
-
-    public int get(int index){
-        int element = myarr.get(index);
-        return element;
-    }
-
-    void Print_list(){
-        System.out.println(myarr);
-    }
-
-    void Insert(int index, int element){
-        myarr.add(index,element);
-    }
-    int size(){
-        return myarr.size();
-    }
-    void remove(int element){
-        if(!isEmpty()){
-        boolean res = myarr.remove(Integer.valueOf(element));
-        return;
-    }
-    System.out.println("list is empty");
-    }
-    int removeAt(int index){
-        if(!isEmpty()){
-        int res = myarr.remove(index);
-        return res;
+        System.out.println("Enter index for search the element : ");
+        int ind = sc.nextInt();
+        System.out.println("element at index " + ind + " : " + l.get(ind));
+        System.out.println("Enter element to get the index:");
+        int ele = sc.nextInt();
+        System.out.println("index of element " + ele + " is " + l.indexOf(ele));
+        for (Integer i : l) {
+            System.out.print(i + " ");
         }
-        System.out.println("list is empty");
-        return -1;
-    }
-    boolean isEmpty(){
-        return myarr.isEmpty();
-    }
-    boolean isfull(){
-        if(myarr.size()==size){
-            return true;
+        System.out.println();
+        System.out.println("list is empty: " + l.isEmpty());
+        l.remove(0);
+        System.out.println("After removing element : " + l);
+        l.removeAll(l);
+        System.out.println("After removing all elements : " + l);
+
+        List<Integer> list = new LinkedList<Integer>();
+        System.out.println("Enter the range of elements : ");
+        int N = sc.nextInt();
+        System.out.println("Enter elements");
+        for (int i = 0; i < N; i++) {
+            list.add(sc.nextInt());
         }
-        else{
-            return false;
+        System.out.println("Enter index for search the element : ");
+        ind = sc.nextInt();
+        System.out.println("element at index " + ind + " : " + list.get(ind));
+        System.out.println("Enter element to get the index:");
+        ele = sc.nextInt();
+        System.out.println("index of element " + ele + " is " + list.indexOf(ele));
+        for (Integer i : list) {
+            System.out.print(i + " ");
         }
+        System.out.println();
+        System.out.println("list is empty: " + list.isEmpty());
+        list.remove(0);
+        System.out.println("After removing element : " + list);
+        list.removeAll(list);
+        System.out.println("After removing all elements : " + list);
+
+        sc.close();
+
     }
 
 }
