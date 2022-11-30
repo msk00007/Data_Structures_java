@@ -30,7 +30,10 @@ public class jq6 {
         int[][] m3 = new int[row][column];
         for(int i = 0; i<row;i++){
             for(int j = 0; j<column; j++){
-                m3[i][j]= m1[i][j]*m2[i][j];
+                m3[i][j] = 0;
+                for(int k = 0; k< row; k++){
+                m3[i][j]+= m1[i][k]*m2[k][j];
+                }
             }
         }
     System.out.println("Result is : ");
