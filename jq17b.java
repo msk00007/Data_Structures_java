@@ -1,46 +1,44 @@
 import java.util.ArrayList;
 import java.util.*;
 
-public class jq17 {
+public class jq17b {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        stackarray s = new stackarray();
+        queuearray q = new queuearray();
+        System.out.println("Queue is empty : "+q.IsEmpty());
+        System.out.println("Enter your number");
         while (true) {
-            System.out.println("Enter your number");
             try {
                 int e = sc.nextInt();
-                s.push(e);
+                q.enqueue(e);
             } catch (InputMismatchException e) {
                 break;
             }
         }
-        System.out.println(s.IsEmpty());
-        s.stack_display();
-        s.pop();
-        s.stack_display();
-        System.out.println(s.IsEmpty());
+        q.Queue_display();
+        q.dequeue();
+        q.Queue_display();
+        System.out.println("Queue is empty : "+q.IsEmpty());
         sc.close();
 
     }
 }
 
-class stackarray extends ArrayList {
-    int top = -1;
+class queuearray {
     ArrayList<Integer> myarr = new ArrayList<Integer>();
 
-    void push(int element) {
-        myarr.add(++top, element);
+    void enqueue(int element) {
+        myarr.add(element);
     }
 
     boolean IsEmpty() {
         return myarr.isEmpty();
     }
 
-    int pop() {
+    int dequeue() {
         if (!IsEmpty()) {
-            int element = myarr.get(top);
-            myarr.remove(top);
-            top -= 1;
+            int element = myarr.get(0);
+            myarr.remove(0);
             return element;
         }
         return -1;
@@ -48,20 +46,18 @@ class stackarray extends ArrayList {
 
     int peek() {
         if (!IsEmpty()) {
-            return myarr.get(top);
+            return myarr.get(0);
         }
         return -1;
     }
 
-    void stack_display() {
+    void Queue_display() {
         if (IsEmpty()) {
             System.out.println("stack is empty...");
             return;
         }
-        int itr = top;
-        while (itr >= 0) {
-            System.out.print(myarr.get(itr) + " ");
-            itr--;
+        for (Integer i : myarr) {
+            System.out.print(i+" ");
         }
         System.out.println();
     }
