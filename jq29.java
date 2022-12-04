@@ -1,7 +1,43 @@
 import java.util.*;
 
 public class jq29 {
+    // heapsort.....................................
+    public static void heapfy(int[]a, int r, int N){
 
+        int child = (2*r)+1;
+        boolean found = false;
+        while(!found && child<=N){
+            if(child<N){
+                if(a[child]<a[child+1]){
+                    child = child+1;
+                }
+            }
+            if(child<=N && a[r]<a[child]){
+                swap(a,r,child);
+                r=child;
+                child = 2*r;
+            }else{
+                found = true;
+            }
+        }
+        }
+        public static void heap(int[]a,int n){
+          
+            for( int i = (n/2)-1; i>=0;i--){
+                heapfy(a, i, n-1);
+                
+            }
+            for (int i=n-1; i>=0; i--){
+                swap(a,0,i);
+                heapfy(a, 0, i-1);
+            }
+        
+        }
+        public static void swap(int[]a,int j, int k){
+            int temp = a[j];
+            a[j] = a[k];
+            a[k] = temp;
+        }
     // ==============================Quick-sort==========================
     public static int partition(int[] arr, int lb, int ub) {
 
@@ -153,8 +189,8 @@ public class jq29 {
             int x = sc.nextInt();
             a[i] = x;
         }
-        System.out.println("1.B_Sort__2.Selection_Sort");
-        System.out.println("3.merge-Sort..__4.Quick_sort__5.Insertion-sort");
+        System.out.println("1.B_Sort__2.Selection_Sort.\n3.merge-Sort..__4.Quick_sort__\n5.Insertion-sort.6.heapsort");
+        System.out.println("");
         boolean flag = true;
         while (flag) {
             System.out.println(" \n select your option.......");
@@ -178,6 +214,10 @@ public class jq29 {
                     break;
                 case 5:
                     jq29.Insertion(a, 0, a.length - 1);
+                    jq29.printlist(a);
+                    break;
+                case 6:
+                    jq29.heap(a, n);
                     jq29.printlist(a);
                     break;
                 case 0:
